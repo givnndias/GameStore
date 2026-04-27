@@ -2,7 +2,9 @@
 
 const Error = () => {
   return (
-    <div>Error</div>
+    <section>
+      <h2>404-Página não encontrada</h2>
+    </section>
   )
 }
 

@@ -17,4 +17,6 @@ const Card = ({ titulo, descricao, imagem, botaoTexto }) => {
   )
 }
 
+
+
 export default Card

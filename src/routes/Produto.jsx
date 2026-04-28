@@ -1,4 +1,4 @@
-import "../css/produto.css"
+import Card from "../components/Card"
 
 import game1 from "../assets/game1.png"
 import game2 from "../assets/game2.png"
@@ -38,27 +38,33 @@ const Produto = () => {
   ]
 
   return (
-    <main className="produtos">
-      <section className="produtos-header">
-        <h1>Nossos Jogos</h1>
-        <p>
-          Escolha seu próximo game favorito e mergulhe em novas aventuras.
+    <main className="min-h-screen px-6 py-12 text-white">
+      <section className="mx-auto max-w-6xl text-center">
+        <span className="mb-4 inline-block rounded-full bg-purple-500/20 px-4 py-2 text-sm font-semibold text-purple-300">
+          Catálogo GameStore
+        </span>
+
+        <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">
+          Nossos Jogos
+        </h1>
+
+        <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg">
+          Escolha seu próximo game favorito e mergulhe em novas aventuras com
+          os melhores títulos da nossa loja.
         </p>
-      </section>
 
-      <section className="grid-produtos">
-        {jogos.map((jogo, index) => (
-          <div className="card-produto" key={index}>
-            <img src={jogo.imagem} alt={jogo.titulo} />
-
-            <div className="card-info">
-              <h2>{jogo.titulo}</h2>
-              <p>{jogo.descricao}</p>
-              <span>{jogo.preco}</span>
-              <button>Comprar</button>
-            </div>
-          </div>
-        ))}
+        <section className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          {jogos.map((jogo, index) => (
+            <Card
+              key={index}
+              imagem={jogo.imagem}
+              titulo={jogo.titulo}
+              descricao={jogo.descricao}
+              preco={jogo.preco}
+              botaoTexto="Comprar"
+            />
+          ))}
+        </section>
       </section>
     </main>
   )
